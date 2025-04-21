@@ -17,9 +17,9 @@ The directory structure assumed for the DIOR-R dataset:
 ## （一）useage
 `python label-convert/hrsc2yolo.py \
 --xml_label_path {/ultralytics-main/Datasets/HRSC2016/HRSC2016} \
---yolo_label_path {/ultralytics-main/Datasets/HRSC2016/yolo-HRSC2016}`
+--yolo_label_path {/ultralytics-main/Datasets/HRSC2016/yolo_HRSC2016}`
 ## （二）note
-在运行命令行前，yolo-HRSC2016文件夹的格式如下：
+在运行命令行前，yolo_HRSC2016文件夹的格式如下：
 The directory structure assumed for the HRSC2016 dataset:
 
     - HRSC2016
