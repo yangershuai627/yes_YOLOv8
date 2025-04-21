@@ -27,3 +27,22 @@ The directory structure assumed for the HRSC2016 dataset:
         │   ├─ trainval
         │   └─ val
 且images文件夹下已经包含HRSC2016数据集的图像。
+
+# 三、dota2yolo.py
+## （一）usage
+`python label-convert/dota2yolo.py \
+--DOTAv1_path {/ultralytics-main/Datasets/DOTAv1/yolo_DOTAv1} \
+--crop_size 1024 \
+--rates 0.5 1.0 1.5 \
+--gap 500`
+## （二）note
+在运行命令行前，yolo_DOTAv1文件夹的格式如下：
+The directory structure assumed for the DOTAv1 dataset:
+
+    - DOTAv1
+        ├─ images
+        │   ├─ trainval
+        │   └─ test
+        ├─ labels
+        │   └─ trainval_original
+trainval_original是DOTA格式的标注文件。
