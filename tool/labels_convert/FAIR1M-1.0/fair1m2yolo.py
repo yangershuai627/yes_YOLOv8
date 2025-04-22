@@ -314,7 +314,7 @@ def split_test(data_root, save_dir, crop_size=1024, gap=200, rates=(1.0,)):
 
 def split_dataset(FAIR1M_path, crop_size, rates, gap):
     parent = os.path.dirname(FAIR1M_path)
-    split_dir = os.path.join(parent, 'demo_yolo_FAIR1M_split')
+    split_dir = os.path.join(parent, 'yolo_FAIR1M_split')
     os.makedirs(split_dir, exist_ok=True)
     
     # split trainval set, with labels.
@@ -515,30 +515,30 @@ def main():
     parser = argparse.ArgumentParser(description="Convert FAIR1M XML to YOLO format")
     parser.add_argument('--FAIR1M_path', 
                         type=str, 
-                        required=False, 
+                        required=True, 
                         help='Path to the input DOTAv1 folder')
     
     parser.add_argument('--crop_size', 
                     type=int, 
-                    required=False, 
+                    required=True, 
                     default=1024,
                     help='crop size of the image')
     parser.add_argument('--rates', 
                 type=float, 
-                required=False,
+                required=True,
                 nargs='+', # 接受多个值 
                 default=[0.5, 1.0, 1.5],
                 help='list of scales to crop the image')
     parser.add_argument('--gap', 
             type=int, 
-            required=False, 
+            required=True, 
             default=500,
             help='gap between crops')
     args = parser.parse_args()
     args.rates = [float(i) for i in args.rates]
     # # 设置默认参数（用于调试模式）
     # if not args.FAIR1M_path:
-    #     args.FAIR1M_path = "/disk2/xiexingxing/home/yes/ultralytics-main/Datasets/FAIR1M1.0/demo_yolo_FAIR1M1.0"
+    #     args.FAIR1M_path = "/disk2/xiexingxing/home/yes/ultralytics-main/Datasets/FAIR1M1.0/yolo_FAIR1M1.0"
 
     xml2dota_txt(args.FAIR1M_path)
     label_convert(args.FAIR1M_path)

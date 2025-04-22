@@ -15,7 +15,7 @@ The directory structure assumed for the DIOR-R dataset:
 
 # 二、hrsc2yolo.py
 ## （一）useage
-`python label-convert/hrsc2yolo.py \
+`python tool/labels_convert/HRSC2016/hrsc2yolo.py \
 --xml_label_path {/ultralytics-main/Datasets/HRSC2016/HRSC2016} \
 --yolo_label_path {/ultralytics-main/Datasets/HRSC2016/yolo_HRSC2016}`
 ## （二）note
@@ -30,7 +30,7 @@ The directory structure assumed for the HRSC2016 dataset:
 
 # 三、dota2yolo.py
 ## （一）usage
-`python label-convert/dota2yolo.py \
+`python tool/labels_convert/DOTAv1/dota2yolo.py \
 --DOTAv1_path {/ultralytics-main/Datasets/DOTAv1/yolo_DOTAv1} \
 --crop_size 1024 \
 --rates 0.5 1.0 1.5 \
@@ -46,3 +46,27 @@ The directory structure assumed for the DOTAv1 dataset:
         ├─ labels
         │   └─ trainval_original
 trainval_original是DOTA格式的标注文件。
+
+# 四、fair1m2yolo.py
+## （一）usage
+`python tool/labels_convert/FAIR1M-1.0/fair1m2yolo.py \
+--FAIR1M_path {/ultralytics-main/Datasets/FAIR1M1.0/yolo_FAIR1M1.0} \
+--crop_size 1024 \
+--rates 0.5 1.0 1.5 \
+--gap 500`
+## （二）note
+在运行命令行前，yolo_FAIR1M文件夹的格式如下：
+The directory structure assumed for the FAIR1M dataset:
+
+    - FAIR1M
+        ├─ images
+        │   ├─ train
+        │   └─ test
+        ├─ labels
+        │   └─ train_xml
+train_xml是FAIR1M的xml标注文件。
+
+# 五、yolo2fair1m.py
+## （一）usage
+`python tool/labels_convert/FAIR1M-1.0/yolo2fair1m.py \
+--merged_dir {/ultralytics-main/FAIR1M1.0/runs/obb/val15/predictions_merged_txt} \`

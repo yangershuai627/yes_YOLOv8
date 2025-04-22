@@ -319,7 +319,7 @@ def split_test(data_root, save_dir, crop_size=1024, gap=200, rates=(1.0,)):
 
 def split_dataset(DOTAv1_path, crop_size, rates, gap):
     parent = os.path.dirname(DOTAv1_path)
-    split_dir = os.path.join(parent, 'demo_yolo_DOTAv1_split')
+    split_dir = os.path.join(parent, 'yolo_DOTAv1_split')
     os.makedirs(split_dir, exist_ok=True)
     
     # split trainval set, with labels.
@@ -471,7 +471,7 @@ def main():
     args.rates = [float(r) for r in args.rates]
     # # 设置默认参数（用于调试模式）
     # if not args.DOTAv1_path:
-    #     args.DOTAv1_path = "/disk2/xiexingxing/home/yes/ultralytics-main/Datasets/DOTAv1/demo_yolo_DOTAv1"
+    #     args.DOTAv1_path = "/disk2/xiexingxing/home/yes/ultralytics-main/Datasets/DOTAv1/yolo_DOTAv1"
 
     label_convert(args.DOTAv1_path)
     split_dataset(args.DOTAv1_path, args.crop_size, args.rates, args.gap)

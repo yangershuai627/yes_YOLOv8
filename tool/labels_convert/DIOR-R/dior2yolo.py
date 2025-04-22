@@ -77,8 +77,14 @@ def yolo_label(yolo_label_path):
 def main():
     parser = argparse.ArgumentParser(description="Convert DIOR-R annotations to YOLO format")
 
-    parser.add_argument('--xml_label_path', type=str, required=True, help='Path to the input origianl label folder')
-    parser.add_argument('--yolo_label_path', type=str, required=True, help='Path to the output yolo label folder')
+    parser.add_argument('--xml_label_path',
+                        type=str,
+                        required=True,
+                        help='Path to the input origianl label folder')
+    parser.add_argument('--yolo_label_path',
+                        type=str, 
+                        required=True, 
+                        help='Path to the output yolo label folder')
 
     args = parser.parse_args()
 
