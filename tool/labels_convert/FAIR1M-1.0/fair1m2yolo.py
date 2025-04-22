@@ -182,8 +182,8 @@ def crop_and_save(anno, windows, window_objs, im_dir, lb_dir, allow_background_i
                     - train
                     - val
     """
-    # 去除不包含目标的Patch
-    allow_background_images = False
+    # # 去除不包含目标的Patch
+    # allow_background_images = False
     
     im = cv2.imread(anno["filepath"])
     name = Path(anno["filepath"]).stem
