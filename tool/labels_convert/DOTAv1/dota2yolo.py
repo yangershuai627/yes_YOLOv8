@@ -1,7 +1,10 @@
-# DOTA-v1数据集的处理思路是先进行标注转换，后在对其进行裁图
+# DOTA-v1数据集的处理思路是先进行标注转换，后进行裁图
 # note:
-# 1. 在标注转换时不进行坐标归一化处理，最后在裁图时进行归一化处理，这样可以减小误差
-# 2. crop_size=1024, rates=[0.5, 1.0, 1.5]，gap=500
+# 1. 在标注转换时不必将坐标范围限制在[0,1]内，标注转换会得到负数或者大于1的数。
+# 2. 在裁图时会将归一化的坐标恢复为原始坐标，然后将其映射到patch坐标系下并进行归一化处理（注意：归一化处理的坐标仍可能会不在[0,1]内，这时需要我们进行限制处理）。
+# 3. 如果在第1步标注转换时对坐标进行了限制处理，那么在第2步将其恢复为原坐标时就会引入误差。
+# 4. crop_size=1024, rates=[0.5, 1.0, 1.5]，gap=500
+
 import argparse
 from ultralytics.data.split_dota import split_test, split_trainval
 import os
@@ -187,8 +190,8 @@ def crop_and_save(anno, windows, window_objs, im_dir, lb_dir, allow_background_i
                     - train
                     - val
     """
-    # 去除不包含目标的Patch
-    allow_background_images = False
+    # # 去除不包含目标的Patch
+    # allow_background_images = False
     
     im = cv2.imread(anno["filepath"])
     name = Path(anno["filepath"]).stem
