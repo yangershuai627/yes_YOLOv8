@@ -1,8 +1,9 @@
 # 一、dior2yolo.py
 ## （一）useage
-`python tools/labels_convert/DIOR-R/dior2yolo.py \
+`python tools/labels_convert/DIOR-R/dior2yolo.py
 --xml_label_path {/ultralytics-main/Datasets/DIOR-R/Annotations/Oriented Bounding Boxes} \
 --yolo_label_path {/yes/ultralytics-main/Datasets/DIOR-R/yolo_DIOR/labels}`
+{}内的路径替换为你的实际路径，运行CLI要去掉{}，以下同理。
 ## （二）note
 在运行命令行前，yolo-DIOR文件夹的格式如下：
 The directory structure assumed for the DIOR-R dataset:
@@ -22,7 +23,7 @@ The directory structure assumed for the DIOR-R dataset:
 在运行命令行前，yolo_HRSC2016文件夹的格式如下：
 The directory structure assumed for the HRSC2016 dataset:
 
-    - HRSC2016
+    - yolo_HRSC2016
         ├─ images
         │   ├─ trainval
         │   └─ val
@@ -39,7 +40,7 @@ The directory structure assumed for the HRSC2016 dataset:
 在运行命令行前，yolo_DOTAv1文件夹的格式如下：
 The directory structure assumed for the DOTAv1 dataset:
 
-    - DOTAv1
+    - yolo_DOTAv1
         ├─ images
         │   ├─ trainval
         │   └─ test
@@ -58,7 +59,7 @@ trainval_original是DOTA格式的标注文件。
 在运行命令行前，yolo_FAIR1M文件夹的格式如下：
 The directory structure assumed for the FAIR1M dataset:
 
-    - FAIR1M
+    - yolo_FAIR1M
         ├─ images
         │   ├─ train
         │   └─ test
