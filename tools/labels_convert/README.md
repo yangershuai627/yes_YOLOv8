@@ -47,6 +47,8 @@ The directory structure assumed for the DOTAv1 dataset:
         ├─ labels
         │   └─ trainval_original
 trainval_original是DOTA格式的标注文件。
+## （三）DOTAv1数据集train val test的划分
+DOTAv1数据集一共包含2806张图像。其中train有1411张，val有458张，test有937张。
 
 # 四、fair1m2yolo.py
 ## （一）usage
