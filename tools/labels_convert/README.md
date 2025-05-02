@@ -73,3 +73,18 @@ train_xml是FAIR1M的xml标注文件。
 ## （一）usage
 `python tools/labels_convert/FAIR1M-1.0/yolo2fair1m.py \
 --merged_dir {/ultralytics-main/FAIR1M1.0/runs/obb/val15/predictions_merged_txt} \`
+
+# 六、数据集train\val\test的数量
+## （一）原始数量
+| 数据集     | train  | val   | test  | total |
+|------------|--------|-------|-------|-------|
+| DOTA-v1    | 1411   | 458   | 937   | 2806  |
+| FAIR1M-1.0 |        |       |       |       |
+| DIOR-R     | 11725  |       | 11738 | 23463 |
+| HRSC2016   |        |       |       |       |
+## （二）裁图后数量
+| 数据集      | crop_size | rates         | gap | trainval数量 | test数量 |
+|-------------|-----------|---------------|-----|--------------|----------|
+| DOTA-v1     | 1024      | [0.5, 1, 1.5]  | 500 | 138,883      | 71,888   |
+| FAIR1M-1.0  | 1024      | [0.5, 1, 1.5]  | 500 |              |          |
+
